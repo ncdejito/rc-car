@@ -2,11 +2,13 @@
 
 1. In terminal 1, run backend
 ```
-source venv/bin/activate
+cd backend
+poetry init
 uvicorn server:app --reload
 ```
 
 1. In terminal 2, run frontend
 ```
+cd frontend
 npm start
 ```
