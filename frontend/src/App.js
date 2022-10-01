@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useEffect } from 'react';
+import { fromEvent, map, filter, distinctUntilChanged } from 'rxjs';
 
 const valid_keys = ["w", "a", "s", "d"];
 
@@ -13,16 +14,16 @@ async function getInfo(key) {
 }
 
 function App() {
-  // https://github.com/facebook/react/issues/15815#issuecomment-498693570
+  // https://dev.to/rxjs/fetching-data-in-react-with-rxjs-and-lt-gt-fragment-54h7
   useEffect(() => {
-    const keyPressHandler = (e) => {
-      if (valid_keys.includes(e.key)) { getInfo(e.key) }
-    };
 
-    document.addEventListener('keydown', keyPressHandler);
-    return () => {
-      document.removeEventListener('keydown', keyPressHandler);
-    };
+    const subscription = fromEvent(document, 'keydown')
+      .pipe(map(event => event.key))
+      .pipe(filter(key => valid_keys.includes(key)))
+      .pipe(distinctUntilChanged())
+      .subscribe(getInfo);
+
+    return () => subscription.unsubscribe();
   }, []);
 
   return (
