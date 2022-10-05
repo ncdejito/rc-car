@@ -1,0 +1,13 @@
+
+use_motor: False
+
+# min speed to move l298n=0.3, vnh2sp30=0.6
+speed: 0.6
+
+# Dual VNH2SP30
+_ena: 5
+_enb: 6
+_in1: 8
+_in2: 7
+_in3: 9
+_in4: 4
