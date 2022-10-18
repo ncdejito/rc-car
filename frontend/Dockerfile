@@ -1,4 +1,4 @@
-FROM node:18-alpine AS development
+FROM arm64v8/node:18-alpine AS development
 ENV NODE_ENV development
 WORKDIR /app
 COPY package.json .
