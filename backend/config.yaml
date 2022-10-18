@@ -1,6 +1,4 @@
 
-use_motor: False
-
 # min speed to move l298n=0.3, vnh2sp30=0.6
 speed: 1.0
 

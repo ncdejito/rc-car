@@ -1,3 +1,8 @@
+Add env variable to use motor or not
+```
+echo export use_motor=False > .envrc
+```
+
 deploy
 ```
 docker build -t backend:local .

@@ -4,3 +4,4 @@ node_modules
 *workspace
 dev
 *.tar
+.envrc

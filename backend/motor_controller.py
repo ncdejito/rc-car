@@ -1,10 +1,12 @@
 from pyfirmata import Arduino
 import yaml
+import os
 
 # load config as variables
 with open("config.yaml", "r") as f:
     config = yaml.load(f, yaml.Loader)
     locals().update(config)
+use_motor = os.environ["use_motor"] == "True"
 
 if use_motor:
     board = Arduino("/dev/ttyACM0")
