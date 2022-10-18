@@ -1,18 +1,12 @@
-FROM python:3.8-slim as requirements-stage
+FROM arm64v8/python:3.8-slim
 
-WORKDIR /tmp
-
-RUN pip install poetry
-
-COPY ./pyproject.toml ./poetry.lock* /tmp/
-
-RUN poetry export -f requirements.txt --output requirements.txt --without-hashes
-
-FROM python:3.8-slim
+SHELL ["/bin/bash", "-c"]
 
 WORKDIR /code
 
-COPY --from=requirements-stage /tmp/requirements.txt /code/requirements.txt
+COPY requirements.txt /code/requirements.txt
+
+RUN python3 -m pip install --upgrade pip
 
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
