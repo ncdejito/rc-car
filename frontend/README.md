@@ -10,5 +10,11 @@ docker pull ncdejito/frontend:local-arm64
 
 run image
 ```
-docker run --rm -p 3000:3000 ncdejito/frontend:local-arm64
+sudo docker run --rm -p 3000:3000 ncdejito/frontend:local-arm64
 ```
+
+Hack to make frontend talk to backend on rpi4
+1. get ipaddress of rpi4 rpi.add.re.ss
+1. replace fetch request ip address on running docker container: localhost -> rpi.add.re.ss
+1. save docker changes
+1. rerun
