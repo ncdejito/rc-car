@@ -1,6 +1,17 @@
-# react-fastapi-keyboard-listener
+# rc-car
 
-## Usage
+![](proof.gif)
+
+## Software
+* React - with Reactive Programming
+* FastAPI
+* Ubuntu Core 22
+
+## Hardware
+* Arduino
+* Rpi4
+
+## Run on dev machine
 1. In terminal 1, run backend
 ```
 cd backend
@@ -15,9 +26,5 @@ cd frontend
 npm start
 ```
 
-## Rationale
-why k8s on rpi
-* when deploying ros node, need separate pod/container for it - ros is hard to setup, docker ros makes it easier to deploy
-* configuring docker network is hard vs k8s services
-* modular, scalable, high availability architecture
-Why no: experimental device mounting
+## Run on RPi4
+Use docker instructions described in backend/README.md and frontend/README.md

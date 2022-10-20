@@ -11,8 +11,8 @@ speed: 1.0
 # _in4: 4
 
 # L298N
-_pwm1: 11
-_pwm2: 3
+_ena: 11
+_enb: 3
 _in1: 6
 _in2: 10
 _in3: 9

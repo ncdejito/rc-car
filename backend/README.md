@@ -14,7 +14,12 @@ docker buildx build -t ncdejito/backend:local-arm64 --platform linux/arm64/v8 --
 docker pull ncdejito/backend:local-arm64
 ```
 
-run image
+run image without motor
 ```
 sudo docker run --rm -p 8000:8000 -e "use_motor=False" ncdejito/backend:local-arm64
+```
+
+run with motor
+```
+sudo docker run --rm -p 8000:8000 --device /dev/ttyACM0 -e "use_motor=True" ncdejito/backend:local-arm64
 ```
