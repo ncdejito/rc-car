@@ -6,6 +6,7 @@
 * React - with Reactive Programming
 * FastAPI
 * Ubuntu Core 22
+* Docker Buildx
 
 ## Hardware
 * Arduino
