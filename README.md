@@ -3,14 +3,15 @@
 ![](proof.gif)
 
 ## Software
-* React - with Reactive Programming
-* FastAPI
+* React - can [add](https://www.youtube.com/watch?v=A3nw2M47K50&t=1555s) a video component later on if I want to stream an RPi camera
+* FastAPI - no need to write custom C++ firmware code using pyfirmata
 * Ubuntu Core 22
-* Docker Buildx
+* Docker Buildx - can add a container app sending autonomous movement commands to FastAPI later on
 
 ## Hardware
 * Arduino
 * RPi4
+* L298N motor driver - can be replaced by L293D to make compatible for stronger motors for bigger cars (like a delivery robot)
 * Robot body - wiring diagram from [OpenBot](https://github.com/isl-org/OpenBot/tree/master/body/diy#option-1-diy), modified smartphone brain with RPi
 
 ## Run on dev machine
